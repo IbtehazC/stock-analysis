@@ -39,6 +39,16 @@ async def root():
 async def health_check():
     return {"status": "healthy", "service": "asx-analytics"}
 
+@app.get("/api/stocks")
+async def get_stocks():
+    """Get sample ASX stock data"""
+    sample_stocks = [
+        {"code": "CBA", "name": "Commonwealth Bank", "price": 142.50, "change": 1.2},
+        {"code": "BHP", "name": "BHP Group", "price": 45.80, "change": -0.5},
+        {"code": "CSL", "name": "CSL Limited", "price": 285.30, "change": 2.1}
+    ]
+    return {"stocks": sample_stocks}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
