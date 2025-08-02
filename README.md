@@ -48,6 +48,12 @@ npm start
 - **Backend API**: http://localhost:8000
 - **API Docs**: http://localhost:8000/docs
 
+## 🔗 API Endpoints
+
+- `GET /` - API status
+- `GET /health` - Health check  
+- `GET /api/stocks` - Current ASX stock data
+
 ## 📄 License
 
 This project is licensed under the MIT License.
